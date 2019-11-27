@@ -1,0 +1,40 @@
+$color-fondo: aqua
+$color-letra: salmon
+
+body
+    color: blue
+
+.fondo 
+    background: $color-fondo
+    color: $color-letra
+
+a
+    color: blue
+    &:visited
+        color: green
+    &:hover
+        color: red
+    &:active
+        color: yellow
+
+@mixin titulo
+    font-size: 1.5em
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-weight: bold
+    color: darkgreen
+
+.titulo
+    @include titulo
+
+.titulo-rojo
+    @extend .titulo
+    background: red
+
+@function producto($a,$b)
+    $result: $a * $b
+    @return $result
+
+.sidebar
+    float: left
+    margin-left: producto(5,20) *1px
+    margin-top: producto(5,2) *1px
